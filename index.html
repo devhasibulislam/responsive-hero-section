@@ -69,11 +69,12 @@
     </script>
 
     <style>
-        .slider-overlay{
+        .slider-overlay {
             position: relative;
             z-index: 1;
         }
-        .slider-overlay::before{
+
+        .slider-overlay::before {
             content: '';
             position: absolute;
             height: 100%;
@@ -102,7 +103,7 @@
                                 <p class="font-bold text-sm uppercase">Services</p>
                                 <p class="text-3xl font-bold">Hello world</p>
                                 <p class="text-2xl mb-10 leading-none">Carousel with TailwindCSS and jQuery</p>
-                                <a href="#"
+                                <a href="#" onclick="russianBlack()"
                                     class="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Contact
                                     us</a>
                             </div>
@@ -117,7 +118,7 @@
                             <p class="font-bold text-sm uppercase">Services</p>
                             <p class="text-3xl font-bold">Hello world</p>
                             <p class="text-2xl mb-10 leading-none">Carousel with TailwindCSS and jQuery</p>
-                            <a href="#"
+                            <a href="#" id="imperialPrimer"
                                 class="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Contact
                                 us</a>
                         </div> <!-- container -->
@@ -143,7 +144,7 @@
                         <input type="text" id="hero-field" name="hero-field"
                             class="w-full bg-gray-800 rounded border bg-opacity-40 border-gray-700 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                     </div>
-                    <button onclick="alert(3.1416)"
+                    <button id="blueBell"
                         class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">subscribe</button>
                 </div>
                 <p class="text-sm mt-2 text-gray-500 mb-8 w-full">Lorem ipsum dolor sit amet consectetur adipisicing
@@ -158,7 +159,7 @@
                             </path>
                         </svg>
                         <span class="ml-4 flex items-start flex-col leading-none"
-                            onclick="alert('Thanks for downloading')">
+                            onclick="aquaVelvet()">
                             <span class="text-xs text-gray-400 mb-1">GET IT ON</span>
                             <span class="title-font font-medium">Google Play</span>
                         </span>
@@ -175,7 +176,7 @@
                             </path>
                         </svg>
                         <span class="ml-4 flex items-start flex-col leading-none"
-                            onclick="alert('Thanks for downloading')">
+                            onclick="doubleDragonSkin()">
                             <span class="text-xs text-gray-400 mb-1">Download on the</span>
                             <span class="title-font font-medium">App Store</span>
                         </span>
@@ -184,6 +185,34 @@
             </div>
         </div>
     </section>
+
+    <script>
+        function russianBlack() {
+            document.body.style.backgroundColor = '#111827';
+        }
+
+        // just mention the function name without parenthesis
+        // this indicates just call the function without execution
+        const imperialPrimerBG = document.getElementById('imperialPrimer');
+        imperialPrimerBG.onclick = imperialPrimer;
+        function imperialPrimer() {
+            document.body.style.backgroundColor = '#222f3e';
+        }
+
+        const blueBellBG = document.getElementById('blueBell');
+        blueBellBG.onclick = blueBell;
+        function blueBell() {
+            document.body.style.backgroundColor = '#341f97';
+        }
+
+        function aquaVelvet() {
+            document.body.style.backgroundColor = '#01a3a4';
+        }
+
+        function doubleDragonSkin() {
+            document.body.style.backgroundColor = '#ff9f43';
+        }
+    </script>
 </body>
 
 </html>
