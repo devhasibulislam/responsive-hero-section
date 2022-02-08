@@ -103,7 +103,8 @@
                                 <p class="font-bold text-sm uppercase">Services</p>
                                 <p class="text-3xl font-bold">Hello world</p>
                                 <p class="text-2xl mb-10 leading-none">Carousel with TailwindCSS and jQuery</p>
-                                <a href="#" onclick="russianBlack()"
+                                <!-- action button 1 -->
+                                <a href="#" onclick="document.body.style.backgroundColor = '#341f97'"
                                     class="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Contact
                                     us</a>
                             </div>
@@ -118,6 +119,7 @@
                             <p class="font-bold text-sm uppercase">Services</p>
                             <p class="text-3xl font-bold">Hello world</p>
                             <p class="text-2xl mb-10 leading-none">Carousel with TailwindCSS and jQuery</p>
+                            <!-- action button 2 -->
                             <a href="#" id="imperialPrimer"
                                 class="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Contact
                                 us</a>
@@ -144,7 +146,8 @@
                         <input type="text" id="hero-field" name="hero-field"
                             class="w-full bg-gray-800 rounded border bg-opacity-40 border-gray-700 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                     </div>
-                    <button id="blueBell"
+                    <!-- action button 3 -->
+                    <button id="blueBell" onclick="russianBlack()"
                         class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">subscribe</button>
                 </div>
                 <p class="text-sm mt-2 text-gray-500 mb-8 w-full">Lorem ipsum dolor sit amet consectetur adipisicing
@@ -158,8 +161,8 @@
                                 d="M99.617 8.057a50.191 50.191 0 00-38.815-6.713l230.932 230.933 74.846-74.846L99.617 8.057zM32.139 20.116c-6.441 8.563-10.148 19.077-10.148 30.199v411.358c0 11.123 3.708 21.636 10.148 30.199l235.877-235.877L32.139 20.116zM464.261 212.087l-67.266-37.637-81.544 81.544 81.548 81.548 67.273-37.64c16.117-9.03 25.738-25.442 25.738-43.908s-9.621-34.877-25.749-43.907zM291.733 279.711L60.815 510.629c3.786.891 7.639 1.371 11.492 1.371a50.275 50.275 0 0027.31-8.07l266.965-149.372-74.849-74.847z">
                             </path>
                         </svg>
-                        <span class="ml-4 flex items-start flex-col leading-none"
-                            onclick="aquaVelvet()">
+                        <!-- action button 4 -->
+                        <span class="ml-4 flex items-start flex-col leading-none" id="aquaVelvet">
                             <span class="text-xs text-gray-400 mb-1">GET IT ON</span>
                             <span class="title-font font-medium">Google Play</span>
                         </span>
@@ -175,44 +178,32 @@
                                 d="M212.1 0c-15.76.64-34.67 10.35-45.97 23.58-9.6 11.13-19 29.68-16.52 48.38a2.5 2.5 0 002.29 2.17c1.06.08 2.15.12 3.23.12 15.41 0 32.04-8.52 43.4-22.25 11.94-14.5 17.99-33.1 16.16-49.77A2.52 2.52 0 00212.1 0z">
                             </path>
                         </svg>
-                        <span class="ml-4 flex items-start flex-col leading-none"
-                            onclick="doubleDragonSkin()">
+                        <!-- action button 5 -->
+                        <span class="ml-4 flex items-start flex-col leading-none" id="doubleDragonSkin">
                             <span class="text-xs text-gray-400 mb-1">Download on the</span>
                             <span class="title-font font-medium">App Store</span>
+                        </span>
+                    </button>
+                    <button
+                        class="bg-gray-800 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-700 hover:text-white focus:outline-none lg:ml-4 md:ml-0 ml-4 md:mt-4 mt-0 lg:mt-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6"
+                            viewBox="0 0 21 21">
+                            <path fill="#f35325" d="M0 0h10v10H0z" />
+                            <path fill="#81bc06" d="M11 0h10v10H11z" />
+                            <path fill="#05a6f0" d="M0 11h10v10H0z" />
+                            <path fill="#ffba08" d="M11 11h10v10H11z" />
+                        </svg>
+                        <!-- action button 6 -->
+                        <span class="ml-4 flex items-start flex-col leading-none" id="turkishAqua">
+                            <span class="text-xs text-gray-400 mb-1">Download from the</span>
+                            <span class="title-font font-medium">Microsoft Store</span>
                         </span>
                     </button>
                 </div>
             </div>
         </div>
     </section>
-
-    <script>
-        function russianBlack() {
-            document.body.style.backgroundColor = '#111827';
-        }
-
-        // just mention the function name without parenthesis
-        // this indicates just call the function without execution
-        const imperialPrimerBG = document.getElementById('imperialPrimer');
-        imperialPrimerBG.onclick = imperialPrimer;
-        function imperialPrimer() {
-            document.body.style.backgroundColor = '#222f3e';
-        }
-
-        const blueBellBG = document.getElementById('blueBell');
-        blueBellBG.onclick = blueBell;
-        function blueBell() {
-            document.body.style.backgroundColor = '#341f97';
-        }
-
-        function aquaVelvet() {
-            document.body.style.backgroundColor = '#01a3a4';
-        }
-
-        function doubleDragonSkin() {
-            document.body.style.backgroundColor = '#ff9f43';
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
