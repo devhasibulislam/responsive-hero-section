@@ -41,3 +41,31 @@ function turkishAqua() {
 document.getElementById('turkishAqua').addEventListener('click', function () {
     document.body.style.backgroundColor = '#EA2027';
 });
+
+/* manage event action */
+const clickButton = document.getElementById('blueBell');
+const inputBox = document.getElementById('hero-field');
+const textOutput = document.getElementById('text-output');
+clickButton.addEventListener('click', function () {
+    textOutput.innerText = inputBox.value;
+    inputBox.value = '';
+});
+
+// const subtitleOutput = document.getElementById('subtitle-output');
+const subtitleOutput = document.body.childNodes[1].childNodes[1].childNodes[3].childNodes[3];
+// const acceptInput = document.getElementById('turkishAqua');
+const acceptInput = document.getElementsByClassName('accept-input')[0];
+// acceptInput.addEventListener('click', largeTextInput);
+acceptInput.onclick = largeTextInput;
+function largeTextInput() {
+    const p = document.createElement('p');
+    // subtitleOutput.innerText = inputBox.value;
+    subtitleOutput.appendChild(p).setAttribute('class', 'remove-text');
+    subtitleOutput.appendChild(p).innerText = inputBox.value;
+};
+
+const deleteBtn = document.getElementsByClassName('delete-btn')[0];
+deleteBtn.addEventListener('click', function(){
+    document.getElementsByClassName('remove-text')[0].style.display = 'none';
+    // document.getElementById('subtitle-output').style.display = 'none';
+});
