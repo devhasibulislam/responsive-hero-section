@@ -71,13 +71,14 @@
                             <input type="text" id="footer-field" name="footer-field"
                                 class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                         </div>
-                        <button
-                            class="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">DELETE</button>
+                        <button id="add-btn"
+                            class="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">ADD</button>
                     </div>
                     <p class="text-gray-500 text-sm mt-2 md:text-left text-center">Bitters chicharrones fanny pack
                         <br class="lg:block hidden">waistcoat green juice.
                         <br class="lg:block hidden">
-                        <button
+                        <br>
+                        <button id="remove-btn" disabled
                             class="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">DELETE</button>
                     </p>
                 </div>
@@ -132,6 +133,40 @@
             </div>
         </div>
     </footer>
+
+    <!-- JavaScript is here -->
+    <script>
+        const footerField = document.getElementById('footer-field');
+        const addButton = document.getElementById('add-btn');
+        const deleteButton = document.getElementById('remove-btn');
+        const focusedText = document.getElementsByClassName('title-font')[3];
+
+        // add a text using 'add' button
+        addButton.onclick = function () {
+            focusedText.innerText = footerField.value;
+        };
+
+        // remove a text using 'delete' button by validating 'delete'
+        // action on click 'delete' button
+        deleteButton.addEventListener('click', function () {
+            focusedText.style.visibility = 'hidden';
+        });
+        // action on border when focus text field
+        footerField.addEventListener('focus', function () {
+            footerField.style.border = '1px solid red';
+        });
+        // action on border when blur text field
+        footerField.addEventListener('blur', function () {
+            footerField.style.border = '1px solid gray';
+        });
+        // detect the keyword 'delete'
+        footerField.addEventListener('change', function (event) {
+            if (event.target.value == 'delete')
+                deleteButton.removeAttribute('disabled');
+            else
+                deleteButton.setAttribute('disabled', true);
+        });
+    </script>
 </body>
 
 </html>
